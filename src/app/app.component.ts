@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular14-youtube-course';
+  public title = 'angular14-youtube-course';
+
+  constructor(){
+    console.log('hi');
+  }
+
+  private getName(name: string): string{
+    return 'hi ' + name
+  }
+
+
+
 }
