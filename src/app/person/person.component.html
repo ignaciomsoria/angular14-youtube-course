@@ -1,1 +1,9 @@
-<p>person works!</p>
+<div style="border: 3px solid red;">
+
+    <p>Name: {{name}}</p>
+    <p>Last Name: {{lastName}}</p>
+    <p>Age: {{age}}</p>
+
+    <!-- //Los componentes html arrojan eventos (click, doble click, etc) y a ese evento se lo agarro con la variable $event. si pongo eso, tengo que poner una variable de netrada en la funcion -->
+    <button (click)="onPrint()">PRINT</button>
+</div>

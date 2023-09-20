@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IPerson } from './person/person.model';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'angular14-youtube-course';
+
+  public person!: IPerson; //El ! nos permite evadir la inicializacion de la variable
+
+  public student:string = 'ecribí acá';
 
   constructor(){
     console.log('hi');
@@ -127,7 +132,8 @@ export class AppComponent {
 
     //Ej 2: convertir a un array filtrar las personas mayores a 10, mostrar solo los ids como array
     const resp1 = Object.values(data).filter(p => p.age > 10).map(p => p.id)
-    console.log("respuesta1: ", resp1)    
+    console.log("respuesta1: ", resp1)   
+     
 
   }
 
@@ -141,5 +147,16 @@ export class AppComponent {
   }
 
 
+  getPrint(event: IPerson, idPerson?:string){
+    console.log(event)
+  }
 
+
+  getLastName(event: any){
+    console.log(event)
+  }
+
+  printName(event: any){
+    console.log(event)
+  }
 }
