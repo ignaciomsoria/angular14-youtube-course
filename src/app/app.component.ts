@@ -13,6 +13,10 @@ export class AppComponent {
 
   public student:string = 'ecribí acá';
 
+  public enablePerson: boolean = true;
+
+  level:number = 0;
+
   constructor(){
     console.log('hi');
 

@@ -1,25 +1,54 @@
 
-<p>ANGULAR</p>
+  <p>ANGULAR</p>
 
-<!-- Si pongo [] le estoy pasando una variable llamada name pero que es una variable definida en el typescript de app -->
-<!-- <app-person [nameTest]="title" lastName ='test' [age]=0></app-person>  -->
-<!-- solo age le pongo [] porque sino lo toma como scrypt. y la variable age está declarada como number -->
-<!-- <app-person nameTest="JUAN" lastName ='PEREZ' [age]=25></app-person> -->
+  <!-- Si pongo [] le estoy pasando una variable llamada name pero que es una variable definida en el typescript de app -->
+  <!-- <app-person [nameTest]="title" lastName ='test' [age]=0></app-person>  -->
+  <!-- solo age le pongo [] porque sino lo toma como scrypt. y la variable age está declarada como number -->
+  <!-- <app-person nameTest="JUAN" lastName ='PEREZ' [age]=25></app-person> -->
 
-<app-person nameTest="MARIA" lastName ='PEREZ' [age]=20 (print)="getPrint($event)"></app-person>
+  <app-person nameTest="MARIA" lastName ='PEREZ' [age]=20 (print)="getPrint($event)"></app-person>
 
-<!-- el ? hace que si existe el value que lo pongo, pero que sino existe que no tire error -->
-<p>{{person?.nombre}}</p> 
-<p>{{person?.apellido}}</p>
-<p>{{person?.edad}}</p>
+  <!-- el ? hace que si existe el value que lo pongo, pero que sino existe que no tire error -->
+  <p>{{person?.nombre}}</p> 
+  <p>{{person?.apellido}}</p>
+  <p>{{person?.edad}}</p>
 
-<input type="text" [(ngModel)]="student" >
-<p>{{student}}</p>
+  <input type="text" [(ngModel)]="student" >
+  <p>{{student}}</p>
 
 
-<!-- //Comunicación del html al ts -->
-Last Name <input type="text" ngModel (ngModelChange)="getLastName($event)">
+  <!-- //Comunicación del html al ts -->
+  Last Name <input type="text" ngModel (ngModelChange)="getLastName($event)">
 
-<!-- Levanto una variable local "name" que representa a este componente html -->
-Name <input type="text" #name>
-<button (click)="printName(name)">Print Name</button>
+  <!-- Levanto una variable local "name" que representa a este componente html -->
+  Name <input type="text" #name>
+  <button (click)="printName(name)">Print Name</button>
+
+  <hr>
+  <hr>
+  <hr>
+
+  <!-- Directivas ESTRUCTURALES -->
+
+  <p *ngIf="enablePerson; else testelse">enablePerson es True</p>
+  <ng-template #testelse>
+    <p>enablePerson es False</p>
+  </ng-template>
+
+  <div *ngFor="let item of [1,2,3,4,5]">
+    <p> Hola  {{item}}
+    </p>
+  </div>
+
+  <div *ngFor="let item of ['a','b','c','d','e']; let i = index">
+    <p> Hola - {{item}} - index {{i}}</p>
+  </div>
+
+  <input type="number" [(ngModel)]="level">
+  <div [ngSwitch]="level">
+    <p *ngSwitchCase="1">nivel es 1</p>
+    <p *ngSwitchCase="2">nivel es 2</p>
+    <p *ngSwitchCase="3">nivel es 3</p>
+    <p *ngSwitchDefault>nivel es por defaoult</p>
+  </div>
+
